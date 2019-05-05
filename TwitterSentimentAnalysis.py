@@ -7,7 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 import operator
 
-class TweeterSentimentAnalyzer:
+class TwitterSentimentAnalyzer:
     def __init__(self, consumer_key, consumer_secret, access_token, access_token_secret):
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
@@ -61,12 +61,12 @@ class TweeterSentimentAnalyzer:
         plt.title('Compound polarities for {0}'.format(self.topic))
         plt.show()
 
-tweeter_sentiment_analyzer = TweeterSentimentAnalyzer(consumer_key='YOUR CONSUMER KEY',
+twitter_sentiment_analyzer = TwitterSentimentAnalyzer(consumer_key='YOUR CONSUMER KEY',
                                                       consumer_secret='YOUR CONSUMER SECRET',
                                                       access_token='YOUR ACCESS TOKEN',
                                                       access_token_secret='YOUR TOKEN SECRET')
 
-tweeter_sentiment_analyzer.get_tweets_polarity('deep learning', count=1000, lang='en')
-tweeter_sentiment_analyzer.plot_tweets_compound_polarities()
+twitter_sentiment_analyzer.get_tweets_polarity('deep learning', count=1000, lang='en')
+twitter_sentiment_analyzer.plot_tweets_compound_polarities()
 
     
